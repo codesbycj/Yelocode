@@ -33,13 +33,14 @@ body {
 
 /* NAVBAR */
 .navbar {
-  width: 70vw;
+  width: 80vw;
   transform: translateX(-50%);
   left: 50%;
   border-radius: 30px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.35);
+  padding: 1rem 2rem !important;
 }
 
 .navbar-nav {
@@ -66,9 +67,11 @@ body {
   box-shadow: unset !important;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1200px) {
   .navbar {
     width: 95%;
+    padding: .5rem 1rem !important;
+    border-radius: 20px;
   }
 
   .navbar-nav {
@@ -99,12 +102,12 @@ body {
 
 #hero {
   height: 100vh;
-
   background: url(assets/yellow-diagonal-geometric-striped-background-with-halftone-detailed_1409-1451.avif);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #ffdf30;
+  position: relative;
 }
 
 .hero {
@@ -130,6 +133,8 @@ body {
 .heroRight {
   width: 40%;
 }
+
+/* SLIDING UP  ANIMATION */
 
 .loader {
   color: black;
@@ -211,6 +216,8 @@ body {
   }
 }
 
+/* SLIDING UP ANIMATION ENDS */
+
 .heroLeft button {
   padding: 0.8rem 2rem;
   background-color: var(--color-sec-btn);
@@ -219,6 +226,10 @@ body {
   border: none;
   border-radius: 15px;
   margin-top: 1rem;
+}
+
+.heroLeft p {
+  margin: 0;
 }
 
 .heroLeft button i {
@@ -382,4 +393,48 @@ body {
 
 .waves .shape-fill {
   fill: #ffffff;
+}
+
+@media (max-width: 991px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  .heroTop {
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+
+  .heroLeft {
+    text-align: center;
+  }
+
+  .heroLeft .lead {
+    margin: .5rem 0;
+  }
+
+  .heroLeft .display-3 {
+    line-height: 46px !important;
+  }
+
+  .loader {
+    font-size: 14px;
+    font-weight: 800;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+
+  .word {
+    padding-left: 0;
+  }
+
+  .heroBottom {
+    margin-top: 3rem;
+  }
+
+  .heroSocials {
+    justify-content: center;
+    margin-top: 1rem;
+  }
 }
