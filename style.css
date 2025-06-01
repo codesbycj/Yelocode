@@ -62,6 +62,39 @@ body {
   color: rgb(255, 255, 255) !important;
 }
 
+.navbar-toggler:focus {
+  box-shadow: unset !important;
+}
+
+@media (max-width: 991px) {
+  .navbar {
+    width: 95%;
+  }
+
+  .navbar-nav {
+    width: 100%;
+    align-items: flex-start;
+    padding: 0;
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .nav-item a {
+    padding: 1rem 0 !important;
+  }
+
+  .nav-item:last-child a {
+    width: inherit;
+    margin: 2rem 0 0 0;
+    background-color: var(--color-sec-btn);
+    border-radius: 30px;
+    text-align: center;
+    color: rgb(255, 255, 255) !important;
+  }
+}
+
 /* HERO */
 
 #hero {
@@ -179,7 +212,7 @@ body {
 }
 
 .heroLeft button {
-  padding: .8rem 2rem;
+  padding: 0.8rem 2rem;
   background-color: var(--color-sec-btn);
   color: white;
   font-weight: 600;
@@ -189,14 +222,13 @@ body {
 }
 
 .heroLeft button i {
-  margin-left: .5rem;
+  margin-left: 0.5rem;
   transition: all 0.5s ease;
 }
 
 .heroLeft button:hover i {
-  margin-left: .8rem;
+  margin-left: 0.8rem;
 }
-
 
 .heroBottom {
   margin-top: -5rem;
@@ -280,16 +312,16 @@ body {
   text-align: left;
 }
 
-.icons0:hover i{
-  background-color: #106BFF;
+.icons0:hover i {
+  background-color: #106bff;
   color: white;
 }
 
 .icons0:hover span {
-  color: #106BFF;
+  color: #106bff;
 }
 
-.icons1:hover i{
+.icons1:hover i {
   background-color: black;
   color: white;
 }
@@ -298,25 +330,25 @@ body {
   color: black;
 }
 
-.icons2:hover i{
-  background-color: #4D269C;
+.icons2:hover i {
+  background-color: #4d269c;
   color: white;
 }
 
 .icons2:hover span {
-  color: #4D269C;
+  color: #4d269c;
 }
 
-.icons3:hover i{
-  background-color: #7B2E8A;
+.icons3:hover i {
+  background-color: #7b2e8a;
   color: white;
 }
 
 .icons3:hover span {
-  color: #7B2E8A;
+  color: #7b2e8a;
 }
 
-.icons4:hover i{
+.icons4:hover i {
   background-color: #080808;
   color: white;
 }
