@@ -589,7 +589,6 @@ body {
   grid-template-columns: repeat(2, 1fr);
   gap: 3rem;
   text-align: left;
-  color: var(--color-sec-btn);
 }
 .bottomWCards {
   margin-top: 1rem;
@@ -626,7 +625,26 @@ body {
 }
 
 .bottomWCards .wwaC {
+  font-weight: 600;
   padding: 2rem;
+  background: url(assets/xxm.webp);
+  background-size: 200px;
+  background-repeat: no-repeat;
+  background-position: 300px;
+}
+
+.bottomWCards .wwaC:nth-child(2) {
+  background: url(assets/axm\(2\).webp);
+  background-size: 200px;
+  background-repeat: no-repeat;
+  background-position: 300px;
+}
+
+.bottomWCards .wwaC:last-child {
+  background: url(assets/axm\(3\).webp);
+  background-size: 200px;
+  background-repeat: no-repeat;
+  background-position: 300px;
 }
 
 .bottomWCards img {
@@ -636,8 +654,31 @@ body {
   right: 30px;
 }
 
+.theNumbers {
+  width: 80%;
+  background: url(assets/xm\(2\).webp);
+  background-position: left;
+  margin: 0 auto;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-color: #0f192d;
+  color: white;
+  padding: 2rem 0;
+  border-radius: 20px;
+}
+
+.tNDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  padding: 0 8rem;
+  text-align: center;
+}
+
 #testimonials {
-  background: #F3F2EF;
+  background: #f3f2ef;
+  height: 100vh;
 }
 
 #footer {
