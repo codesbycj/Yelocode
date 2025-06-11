@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Simple Website</title>
+    <!-- Load Tailwind CSS CDN for utility-first styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind to use Inter font and enable JIT mode for faster compilation -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'], // Define Inter font
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Link to Google Fonts for 'Inter' -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Apply Inter font globally and set a base background color */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+            min-height: 100vh; /* Ensure body takes full viewport height */
+            display: flex;
+            flex-direction: column; /* Allow header, main, footer to stack vertically */
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <!-- Header Section -->
+    <header class="bg-blue-600 text-white p-4 shadow-md rounded-b-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">My Awesome Site</h1>
+            <!-- Navigation Links -->
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="hover:text-blue-200 transition duration-300">Home</a></li>
+                    <li><a href="#" class="hover:text-blue-200 transition duration-300">About</a></li>
+                    <li><a href="#" class="hover:text-blue-200 transition duration-300">Services</a></li>
+                    <li><a href="#" class="hover:text-blue-200 transition duration-300">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="container mx-auto p-6 my-8 bg-white rounded-lg shadow-xl flex-grow">
+        <section class="text-center mb-10">
+            <h2 class="text-4xl font-extrabold text-blue-700 mb-4">Welcome to Our Website!</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                Discover amazing content and useful information tailored just for you.
+                We strive to provide the best experience possible.
+            </p>
+        </section>
+
+        <!-- Interactive Element Section -->
+        <section class="grid md:grid-cols-2 gap-8 mb-10">
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-semibold text-blue-600 mb-3">About Us</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    We are a passionate team dedicated to creating innovative solutions.
+                    Our journey started with a simple idea: to make digital experiences
+                    more accessible and enjoyable for everyone.
+                </p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col justify-between">
+                <div>
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-3">Dynamic Message</h3>
+                    <p id="dynamicMessage" class="text-gray-700 leading-relaxed">Click the button to see a new message!</p>
+                </div>
+                <button id="changeMessageBtn"
+                        class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full
+                               transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2
+                               focus:ring-blue-400 focus:ring-opacity-75 self-center md:self-start">
+                    Change Message
+                </button>
+            </div>
+        </section>
+
+        <!-- Another Content Section -->
+        <section class="bg-gray-50 p-6 rounded-lg shadow-md">
+            <h3 class="text-2xl font-semibold text-blue-600 mb-3">Our Services</h3>
+            <ul class="list-disc list-inside text-gray-700 leading-relaxed grid md:grid-cols-2 gap-2">
+                <li>Web Design & Development</li>
+                <li>Mobile App Creation</li>
+                <li>Digital Marketing Strategies</li>
+                <li>Content Creation & Management</li>
+                <li>Cloud Solutions</li>
+                <li>IT Consulting</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white p-4 mt-8 rounded-t-lg">
+        <div class="container mx-auto text-center text-sm">
+            &copy; 2025 My Awesome Site. All rights reserved. | Built with ❤️ using HTML, Tailwind CSS, and JavaScript.
+        </div>
+    </footer>
+
+    <!-- JavaScript for interactivity -->
+    <script>
+        // Get references to the button and message paragraph
+        const changeMessageBtn = document.getElementById('changeMessageBtn');
+        const dynamicMessage = document.getElementById('dynamicMessage');
+
+        // Array of messages to cycle through
+        const messages = [
+            "Hello there! This is a new message.",
+            "Welcome to the interactive section!",
+            "You just clicked the button!",
+            "Isn't JavaScript fun?",
+            "Keep exploring our site!"
+        ];
+
+        let messageIndex = 0; // Keep track of the current message index
+
+        // Add an event listener to the button
+        changeMessageBtn.addEventListener('click', () => {
+            // Update the message with the next one in the array
+            dynamicMessage.textContent = messages[messageIndex];
+            // Increment the index, reset to 0 if it goes beyond the array length
+            messageIndex = (messageIndex + 1) % messages.length;
+        });
+
+        // Optional: Add a subtle animation on page load for the welcome message
+        window.addEventListener('load', () => {
+            const welcomeText = document.querySelector('h2');
+            if (welcomeText) {
+                welcomeText.style.opacity = '0';
+                welcomeText.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    welcomeText.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+                    welcomeText.style.opacity = '1';
+                    welcomeText.style.transform = 'translateY(0)';
+                }, 100);
+            }
+        });
+    </script>
+</body>
+</html>
